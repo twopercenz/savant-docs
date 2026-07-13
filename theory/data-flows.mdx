@@ -1,7 +1,7 @@
 ---
-title: "시스톨릭 어레이 데이터 흐름: WS·IS·OS 방식 비교"
+title: "WS·IS·OS 데이터 흐름 비교: SAVANT의 Nc = 2SR + SC + T − 2 공식 해설"
 sidebarTitle: "데이터 흐름"
-description: "Weight Stationary, Input Stationary, Output Stationary 세 가지 데이터 흐름 방식의 원리, 이론적 클럭 수 공식(Nc), 격자 크기 제약을 설명합니다."
+description: "Weight Stationary, Input Stationary, Output Stationary 세 가지 데이터 흐름 방식의 원리와 차이를 설명합니다. 이론적 클럭 수 공식 Nc = 2SR + SC + T − 2와 2×2 격자의 타일링 제약도 정리합니다."
 ---
 
 시스톨릭 어레이에서 하드웨어 격자는 동일하더라도, **어떤 값을 PE에 고정하고 어떤 값을 흘려보내느냐**에 따라 세 가지 데이터 흐름 방식이 구분됩니다. WS(Weight Stationary), IS(Input Stationary), OS(Output Stationary)로 불리는 이 방식들은 메모리 접근 횟수, 통신량, 누산 방식에서 서로 다른 효율 특성을 보입니다. SAVANT 프로젝트는 같은 $2 \times 2$ 아두이노 격자 위에서 WS와 OS를 모두 구현하고, 이론적 클럭 수 공식을 통해 두 방식의 효율을 비교합니다.

@@ -1,7 +1,7 @@
 ---
-title: "OS 모드 코드: Output Stationary 4보드 구현"
+title: "SAVANT OS 모드 코드: Output Stationary 방식 4-보드 시스톨릭 어레이 전체 구현"
 sidebarTitle: "OS 모드"
-description: "SAVANT OS(Output Stationary) 모드 아두이노 4보드 전체 코드, 핀 배치, 업로드 순서, LCD 출력 해석 방법을 설명합니다."
+description: "SAVANT OS(Output Stationary) 모드의 Arduino Nano 4보드 전체 코드를 제공합니다. PE별 핀 배치, receiveByte 수신 함수, 이중 폴링 루프, D6 타이밍 신호 원리, 업로드 순서, 그리고 LCD 결과 해석 방법을 단계별로 설명합니다."
 ---
 
 OS(Output Stationary) 모드는 시스톨릭 어레이의 각 PE(Processing Element)가 **자신의 출력 원소를 고정한 채** 누산하는 방식입니다. 2×2 격자에서 A 행렬의 값은 왼쪽→오른쪽으로, B 행렬의 값은 위→아래 방향으로 흘러가며, 각 PE는 도착한 값으로 MAC(Multiply-Accumulate) 연산을 수행합니다. 4개의 Arduino Nano가 각각 PE(0,0), PE(0,1), PE(1,0), PE(1,1) 역할을 맡아 커스텀 클럭-동기 통신(`shiftOut`/`receiveByte`)으로 데이터를 주고받습니다.

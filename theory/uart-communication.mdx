@@ -1,7 +1,7 @@
 ---
-title: "아두이노 보드 간 통신: UART·SoftwareSerial·커스텀 클럭"
+title: "아두이노 보드 간 통신: UART 원리부터 shiftOut·receiveByte 클럭 동기 방식까지"
 sidebarTitle: "통신 원리"
-description: "SAVANT에서 사용하는 UART 프레임 구조, 보레이트, SoftwareSerial과 커스텀 클럭 동기 통신 방식, 통신 오버헤드가 실험 결과에 미치는 영향을 설명합니다."
+description: "UART 프레임 구조와 보레이트를 설명합니다. SAVANT 최종 버전이 SoftwareSerial 대신 채택한 shiftOut·receiveByte 커스텀 클럭 동기 방식의 동작 원리와 통신 오버헤드가 실험 결과에 미치는 영향을 분석합니다."
 ---
 
 SAVANT 시스톨릭 어레이에서 PE(Processing Element) 역할을 하는 아두이노 보드들은 서로 데이터를 주고받아야 합니다. 보드 내부 SRAM에서 데이터를 읽는 것은 나노초 수준으로 빠르지만, 보드와 보드 사이의 통신은 훨씬 느립니다. 이 페이지에서는 아두이노 보드 간 통신에 사용되는 UART의 원리부터 SAVANT가 채택한 커스텀 클럭 동기 방식까지, 통신 기술 전반을 설명합니다.
