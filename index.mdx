@@ -1,20 +1,64 @@
 ---
-title: "Introduction"
-description: "Welcome to your project"
+title: "SAVANT: 폰 노이만 병목 현상과 시스톨릭 어레이 비교 실험"
+sidebarTitle: "홈"
+description: "아두이노 5대로 구현하는 SAVANT 프로젝트 — 폰 노이만 순차 처리와 2×2 시스톨릭 어레이 병렬 처리의 행렬 연산 효율을 정량적으로 비교합니다."
 ---
 
-Write a short description of your product here. What it does, who it's for, and what they can accomplish with it.
+SAVANT(**Systolic Array as Von Neumann's Answer to the bottleneck Threshold**)는 폰 노이만 병목 현상과 시스톨릭 어레이 구조의 효율 차이를 아두이노 나노 5대로 직접 구현해 비교하는 고등학교 탐구 프로젝트입니다. 단일 보드 순차 처리(대조군)와 2×2 격자 병렬 처리(비교군)로 행렬 곱셈을 수행하고, 처리 시간·메모리 접근 횟수·이론 클럭 수를 측정해 두 구조의 차이를 정량적으로 분석합니다.
 
-<Tip>
-  Ready to make this your own? Start by editing this page. Update your `docs.json` file to customize your site. Then fill out the [Quickstart](/quickstart) page.
-</Tip>
+<CardGroup cols={2}>
+  <Card title="프로젝트 개요" icon="flask" href="/project-overview">
+    탐구 목적, 연구 질문, 독립변인·종속변인 구조를 한눈에 확인합니다.
+  </Card>
+  <Card title="재료 목록" icon="box" href="/materials">
+    예산 10만 원 이내 확정 재료 목록과 각 부품의 역할을 확인합니다.
+  </Card>
+  <Card title="이론적 배경" icon="book-open" href="/theory/von-neumann">
+    폰 노이만 구조, 시스톨릭 어레이, UART 통신까지 핵심 개념을 정리합니다.
+  </Card>
+  <Card title="회로 설계" icon="microchip" href="/hardware/circuit-overview">
+    2×2 격자 핀 연결 다이어그램과 GND 공통 배선 방법을 확인합니다.
+  </Card>
+  <Card title="코드 구현" icon="code" href="/code/single-board">
+    대조군·OS 모드·WS 모드 아두이노 코드 9개 파일을 확인합니다.
+  </Card>
+  <Card title="실험 방법" icon="chart-line" href="/experiment/methodology">
+    측정 절차, 반복 횟수, 이론값–실측값 비교 방법을 확인합니다.
+  </Card>
+  <Card title="보고서 작성 가이드" icon="file-pen" href="/report/introduction-motivation">
+    탐구 동기, 이론적 배경, 알려진 설계 이슈까지 보고서 구성 전략을 확인합니다.
+  </Card>
+  <Card title="알려진 이슈" icon="triangle-exclamation" href="/report/known-issues">
+    설계 과정에서 발견된 10가지 문제점과 해결책을 확인합니다.
+  </Card>
+</CardGroup>
 
-<Card title="Quickstart" icon="rocket" href="/quickstart">
-  This card links to the quickstart page in your project.
-</Card>
-<Card title="Components" icon="puzzle-piece" href="https://mintlify.com/docs/components">
-  Add cards, callouts, steps, tabs, and more to design and structure your pages.
-</Card>
-<Card title="Settings" icon="gear" href="https://mintlify.com/docs/organize/settings">
-  Set your site name, branding, and navigation in the `docs.json` file.
-</Card>
+## 프로젝트 한눈에 보기
+
+<Steps>
+  <Step title="이론 공부">
+    폰 노이만 구조의 병목 현상과 시스톨릭 어레이의 데이터 재사용 원리를 이해합니다. [이론적 배경 →](/theory/von-neumann)
+  </Step>
+  <Step title="재료 준비 및 회로 구성">
+    아두이노 나노 5개, 점퍼 와이어, 브레드보드, LCD 모듈을 준비하고 2×2 격자를 배선합니다. [회로 설계 →](/hardware/circuit-overview)
+  </Step>
+  <Step title="코드 업로드">
+    대조군 1개, OS 모드 4개, WS 모드 4개 — 총 9개 보드 코드를 각 보드에 업로드합니다. [코드 구현 →](/code/single-board)
+  </Step>
+  <Step title="측정 및 분석">
+    행렬 크기 3가지 × 처리 방식 3가지 = 총 9가지 조합을 각 5회 이상 측정하고, 이론 클럭 수 공식과 비교합니다. [실험 방법 →](/experiment/methodology)
+  </Step>
+</Steps>
+
+## 핵심 비교 구조
+
+| 구분 | 대조군 (단일 보드) | 비교군 (2×2 격자) |
+|------|------------------|------------------|
+| 처리 방식 | 순차 처리 (`for`문 반복) | 병렬 처리 (PE 간 데이터 흐름) |
+| 데이터 흐름 | — | OS 모드 / WS 모드 |
+| 측정 항목 | 처리 시간, 배열 접근 횟수 | 처리 시간, 통신 횟수 |
+| 이론 기준 | — | Nc = 2S_R + S_C + T − 2 |
+
+<Note>
+SAVANT 프로젝트에서 사용하는 아두이노 나노(ATmega328)는 엄밀히 말해 하버드 구조에 가깝습니다. 대조군은 "공유 배열에 순차적으로 접근하는 패턴"으로 폰 노이만 병목을 모사하며, 이 한계는 보고서의 한계점 섹션에 명시적으로 기술해야 합니다.
+</Note>

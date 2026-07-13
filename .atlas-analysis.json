@@ -1,17 +1,11 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
+  "projectType": "general",
+  "projectName": "SAVANT",
+  "projectDescription": "A comprehensive Korean high-school research project guidebook documenting the SAVANT project — an Arduino-based experiment comparing Von Neumann sequential processing with 2×2 Systolic Array parallel processing for matrix multiplication efficiency.",
   "theme": "almond",
-  "name": "SAVANT",
-  "colors": {
-    "primary": "#ef7025",
-    "light": "#eec9bc",
-    "dark": "#4fa1ab"
-  },
-  "favicon": "/favicon.svg",
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
   "navigation": {
     "tabs": [
       {
@@ -84,10 +78,24 @@
       }
     ]
   },
-  "navbar": {
-    "primary": {
-      "type": "github",
-      "href": "https://github.com/twopercenz"
-    }
-  }
+  "keyFeatures": [
+    "폰 노이만 병목 현상과 시스톨릭 어레이 이론 해설",
+    "아두이노 나노 5대를 이용한 2×2 격자 구현",
+    "OS(Output Stationary) 및 WS(Weight Stationary) 데이터 흐름 비교",
+    "커스텀 클럭 동기 통신(shiftOut/receiveByte) 구현",
+    "이론적 클럭 수 공식(Nc = 2Sr + Sc + T - 2) 실증 검증",
+    "LCD 디스플레이를 통한 실시간 처리 시간 출력",
+    "D6 핀을 이용한 엔드-투-엔드 타이밍 측정",
+    "탐구 보고서 작성 가이드 및 동기 문단 예시",
+    "발견된 설계 이슈 10가지 및 해결책 정리",
+    "예산 10만원 이내 재료 목록 확정"
+  ],
+  "publicApiSurface": [
+    "shiftOut(DATA_PIN, CLOCK_PIN, MSBFIRST, value) — 1바이트 전송",
+    "receiveByte(clockPin, dataPin) — 커스텀 수신 함수",
+    "micros() — 처리 시간 측정",
+    "SoftwareSerial(rx, tx) — 보드 간 시리얼 통신",
+    "Wire.begin() / LiquidCrystal_I2C — LCD I2C 출력",
+    "Nc = 2*Sr + Sc + T - 2 — 이론적 클럭 수 공식"
+  ]
 }

@@ -1,0 +1,213 @@
+---
+title: "SAVANT 보고서 참고문헌 목록 및 인용 가이드"
+sidebarTitle: "참고문헌"
+description: "SAVANT 보고서에서 인용하는 de Vries(2023), Kung & Leiserson(1978), Jouppi et al.(2017) 등 참고문헌 APA 형식과 활용 방법을 안내합니다."
+---
+
+SAVANT 보고서에서 인용하는 참고문헌은 크게 세 가지 역할을 한다: ① AI 에너지 소비의 규모와 추세를 뒷받침하는 문헌, ② 시스톨릭 어레이의 이론적 근거를 제공하는 원 논문, ③ 구글 TPU 적용 사례를 설명하는 공학 논문. 이 페이지에서는 각 참고문헌의 APA 형식 인용, 보고서에서의 활용 범위, 그리고 본문 내 인용(in-text citation) 방법을 안내한다.
+
+---
+
+## 1. 참고문헌 목록 (APA 형식)
+
+### 참고문헌 1
+
+de Vries, A. (2023). The growing energy footprint of artificial intelligence. *Joule*, *7*(10), 2191–2194. https://doi.org/10.1016/j.joule.2023.09.004
+
+<Note>
+  저널명(*Joule*)과 권호(*7*(10))는 이탤릭체로 표시한다. APA 7판 기준으로 DOI는 하이퍼링크 형식(`https://doi.org/...`)으로 표기한다. 논문 제목은 첫 단어와 고유명사만 대문자로 쓴다.
+</Note>
+
+---
+
+### 참고문헌 2
+
+Kung, H. T., & Leiserson, C. E. (1978). Systolic arrays (for VLSI). In *Sparse Matrix Proceedings 1978* (pp. 256–282). SIAM.
+
+<Note>
+  이 문헌은 학술지 논문이 아닌 학술대회 프로시딩(proceedings) 수록 논문이다. APA 형식에서 책/프로시딩 제목은 이탤릭체, 페이지 범위 앞에는 "pp."를 붙인다. 출판사 SIAM(Society for Industrial and Applied Mathematics)은 도시명 없이 기관명만 표기한다.
+</Note>
+
+---
+
+### 참고문헌 3
+
+Jouppi, N. P., Young, C., Patil, N., Patterson, D., Agrawal, G., Bajwa, R., Bates, S., Bhatia, S., Boden, N., Borchers, A., Boyle, R., Cantin, P., Chao, C., Clark, C., Coriell, J., Daley, M., Dau, M., Dean, J., Gelb, B., … Yoon, D. H. (2017). In-datacenter performance analysis of a tensor processing unit. In *Proceedings of the 44th Annual International Symposium on Computer Architecture (ISCA '17)* (pp. 1–12). ACM. https://doi.org/10.1145/3079856.3080246
+
+<Note>
+  저자가 많을 경우 APA 7판 기준으로 첫 번째 저자부터 19번째까지 나열하고, 이후 저자는 줄임표(…)로 처리한 뒤 마지막 저자를 표기한다. 고등학생 보고서에서는 "Jouppi et al. (2017)"로 약식 표기하는 것이 일반적이다.
+</Note>
+
+---
+
+### 참고문헌 4
+
+Backus, J. (1978). Can programming be liberated from the von Neumann style? A functional style and its algebra of programs. *Communications of the ACM*, *21*(8), 613–641.
+
+<Note>
+  이 문헌은 "폰 노이만 스타일"의 한계를 논한 컴퓨터 과학 고전 논문이다. 이론적 배경의 폰 노이만 구조 섹션에서 선택적으로 인용할 수 있다.
+</Note>
+
+---
+
+## 2. 각 참고문헌 활용 범위
+
+<Accordion title="de Vries (2023) — AI 에너지 소비 추세 인용">
+  **논문 주요 내용:**
+  de Vries(2023)는 AI 서비스(특히 ChatGPT 등 생성형 AI)의 확산에 따른 데이터센터 전력 수요 증가를 분석하고, 향후 AI 에너지 소비가 전 세계 전력망에 미칠 영향을 추산한다.
+
+  **SAVANT 보고서에서 올바른 활용:**
+  - ✅ "AI 서비스 확산으로 데이터센터 전력 수요가 폭발적으로 늘어나고 있다" → 이 주장을 뒷받침하는 인용
+  - ✅ "AI의 에너지 소비 문제가 에너지 산업에 직접적인 영향을 미치고 있다" → 이 맥락에서 인용
+  - ✅ 탐구 동기의 첫 번째 문단 말미 인용
+
+  **SAVANT 보고서에서 잘못된 활용:**
+
+  <Warning>
+    아래 경우에 de Vries(2023)를 인용해서는 안 된다:
+
+    - ❌ "AI 연산은 일반 연산보다 수십 배 더 많은 에너지를 소비한다" — 이 논문이 이런 배수 비교를 직접 제시하지 않는다면 인용 오용이다.
+    - ❌ "폰 노이만 구조가 AI 에너지 소비의 원인이다" — 이 논문은 폰 노이만 병목을 분석하는 논문이 아니다.
+    - ❌ 실험 결과 분석에서 "이 결과는 de Vries(2023)의 주장을 뒷받침한다" — 개별 아두이노 실험 결과가 거시적 에너지 소비 추세를 직접 뒷받침하지는 않는다.
+  </Warning>
+</Accordion>
+
+<Accordion title="Kung & Leiserson (1978) — 시스톨릭 어레이 원 논문">
+  **논문 주요 내용:**
+  시스톨릭 어레이의 개념을 처음 제안한 원 논문이다. PE(Processing Element) 배열 구조, 클럭 기반 데이터 흐름, 메모리 접근 횟수 감소 원리를 VLSI 설계 맥락에서 제시한다. Nc 공식(클럭 사이클 수 이론 모델)의 출처이기도 하다.
+
+  **SAVANT 보고서에서 활용:**
+  - ✅ 이론적 배경 §3.1 "시스톨릭 어레이의 등장 배경"에서 인용
+  - ✅ Nc 공식 제시 시 인용 (`(Kung & Leiserson, 1978)`)
+  - ✅ PE 구조와 MAC 연산 설명 시 인용
+  - ✅ 탐구 동기에서 시스톨릭 어레이를 처음 소개할 때 선택적 인용
+
+  **인용 표기 예시:**
+  ```
+  1978년 쿵(Kung)과 레이서슨(Leiserson)이 처음 제안한 시스톨릭 어레이는...
+  (Kung & Leiserson, 1978)
+  ```
+
+  <Note>
+    Nc 공식을 보고서에 기재할 때 반드시 이 논문을 인용해야 한다. 수식을 출처 없이 쓰면 표절 의혹이 생길 수 있다.
+  </Note>
+</Accordion>
+
+<Accordion title="Jouppi et al. (2017) — 구글 TPU 논문">
+  **논문 주요 내용:**
+  구글이 2016년부터 운영한 1세대 TPU(Tensor Processing Unit)의 설계와 성능을 분석한 논문이다. 시스톨릭 어레이를 딥러닝 가속기에 적용한 사례, CPU/GPU 대비 성능 및 에너지 효율 비교, 온칩 PE 배선이 가능한 이유 등을 다룬다.
+
+  **SAVANT 보고서에서 활용:**
+  - ✅ 이론적 배경 §3.4 "구글 TPU의 적용 사례"에서 인용
+  - ✅ "TPU 내부의 PE 사이 통신은 나노초 이하 수준"이라는 주장의 근거
+  - ✅ 결과 분석에서 "TPU와 SAVANT 실험의 결정적 차이" 설명 시 인용
+
+  **인용 표기 예시:**
+  ```
+  구글은 2016년부터 자사 딥러닝 워크로드를 위해 TPU를 설계했으며,
+  그 핵심 연산 장치로 시스톨릭 어레이를 채택했다(Jouppi et al., 2017).
+  ```
+</Accordion>
+
+<Accordion title="Backus (1978) — 폰 노이만 스타일 비판 논문 (선택 인용)">
+  **논문 주요 내용:**
+  1977년 튜링상 수상자 존 백커스(John Backus)의 수상 강연을 기반으로 한 논문이다. 폰 노이만 구조 기반 프로그래밍의 한계를 철학적·구조적 관점에서 비판하며 함수형 프로그래밍을 대안으로 제시한다.
+
+  **SAVANT 보고서에서 활용:**
+  - ✅ 이론적 배경 §1 "폰 노이만 구조" 섹션에서 병목 문제의 역사적 인식을 설명할 때 선택적으로 인용
+  - ⚠️ 필수 인용은 아니다. 보고서 분량이 충분하고 역사적 맥락을 강조하고 싶을 때만 사용할 것
+
+  **주의사항:**
+  이 논문은 프로그래밍 패러다임 관점의 비판이지 하드웨어 아키텍처 분석 논문이 아니다. "폰 노이만 병목이 하드웨어 수준에서 존재한다"는 주장의 직접 근거로는 적절하지 않다.
+</Accordion>
+
+---
+
+## 3. 본문 내 인용 방법 (한국 보고서 스타일)
+
+### 3.1 기본 인용 형식
+
+한국 고등학생 연구 보고서에서는 APA 스타일의 괄호 인용이 가장 보편적으로 사용된다.
+
+| 상황 | 형식 | 예시 |
+|------|------|------|
+| 저자 이름이 문장에 포함될 때 | 저자명(연도) | 쿵과 레이서슨(1978)은 시스톨릭 어레이를... |
+| 저자 이름이 문장에 없을 때 | (저자, 연도) | ...메모리 접근 횟수를 줄인다(Kung & Leiserson, 1978). |
+| 저자가 3명 이상일 때 | 첫 저자 et al. (연도) | (Jouppi et al., 2017) |
+| 같은 연도에 같은 저자 문헌 2개 | 연도 뒤에 a, b | (de Vries, 2023a) |
+
+### 3.2 직접 인용 vs 간접 인용
+
+<Accordion title="직접 인용 (원문 그대로)">
+  원문을 그대로 옮길 때는 따옴표 안에 원문을 쓰고 인용 표기를 한다. 한국어 보고서에서는 영어 원문을 직접 인용하는 경우가 드물다. 일반적으로 번역하여 간접 인용하는 방식을 쓴다.
+
+  **영어 원문 직접 인용 예시:**
+  ```
+  쿵과 레이서슨(1978)은 "a systolic array is a network of processors
+  which rhythmically compute and pass data through the system"이라고
+  시스톨릭 어레이를 정의하였다.
+  ```
+</Accordion>
+
+<Accordion title="간접 인용 (내용을 재서술)">
+  가장 일반적인 인용 방식이다. 원문의 내용을 자신의 언어로 재서술하고 출처를 밝힌다.
+
+  **예시:**
+  ```
+  시스톨릭 어레이에서 데이터는 격자 가장자리에서 한 번 입력된 뒤
+  PE 사이를 흘러다니며 여러 번 재사용되기 때문에, 메모리 접근
+  횟수 자체가 줄어든다(Kung & Leiserson, 1978).
+  ```
+</Accordion>
+
+### 3.3 인용 위치
+
+인용 표기는 일반적으로 해당 내용이 끝나는 문장의 마침표 **앞**에 위치한다.
+
+```
+...이것이 에너지 산업 전반에 직접적인 영향을 미치고 있었던 것이다(de Vries, 2023).
+                                                                ↑ 마침표 앞
+```
+
+---
+
+## 4. 참고문헌 목록 최종 정리
+
+보고서 맨 끝에 들어가는 참고문헌 목록 완성본은 다음과 같다. APA 7판 형식을 따르며, 저자의 성(family name) 알파벳 순으로 정렬한다.
+
+```
+참고문헌
+
+Backus, J. (1978). Can programming be liberated from the von Neumann
+    style? A functional style and its algebra of programs.
+    Communications of the ACM, 21(8), 613–641.
+
+de Vries, A. (2023). The growing energy footprint of artificial
+    intelligence. Joule, 7(10), 2191–2194.
+    https://doi.org/10.1016/j.joule.2023.09.004
+
+Jouppi, N. P., Young, C., Patil, N., Patterson, D., Agrawal, G.,
+    Bajwa, R., ... Yoon, D. H. (2017). In-datacenter performance
+    analysis of a tensor processing unit. In Proceedings of the 44th
+    Annual International Symposium on Computer Architecture (ISCA '17)
+    (pp. 1–12). ACM. https://doi.org/10.1145/3079856.3080246
+
+Kung, H. T., & Leiserson, C. E. (1978). Systolic arrays (for VLSI).
+    In Sparse Matrix Proceedings 1978 (pp. 256–282). SIAM.
+```
+
+<Note>
+  APA 스타일에서 참고문헌 목록의 두 번째 줄부터는 들여쓰기(hanging indent)를 적용한다. 워드프로세서에서 "내어쓰기(hanging)" 단락 설정을 사용하면 자동으로 적용된다.
+</Note>
+
+---
+
+## 5. 인용 관련 주의사항 체크리스트
+
+- [ ] de Vries(2023)가 AI 에너지 소비 **규모·추세** 맥락에서만 인용되었는가? (폰 노이만 병목의 원인 설명에 잘못 인용되지 않았는가?)
+- [ ] Kung & Leiserson(1978)이 Nc 공식 제시 시 인용되었는가?
+- [ ] Jouppi et al.(2017)이 TPU 적용 사례 설명 시 인용되었는가?
+- [ ] 본문 내 인용 표기가 일관되게 "저자, 연도" 형식을 따르는가?
+- [ ] 참고문헌 목록이 알파벳 순으로 정렬되어 있는가?
+- [ ] 보고서에서 인용한 모든 문헌이 참고문헌 목록에 포함되어 있는가?
+- [ ] 참고문헌 목록에만 있고 본문에서 인용되지 않은 문헌은 없는가?
